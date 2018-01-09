@@ -54,8 +54,8 @@ into the {body} of the default.hbs template --}}
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
+                <h3 class="subscribe-form-title">>Restez inform&eacute;</h3>
+                <p>Abonnez-vous et recevez les derni&egrave;res activit&eacute;s de ston3o</p>
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
@@ -74,6 +74,9 @@ into the {body} of the default.hbs template --}}
                 {{/has}}
 
             </footer>
+
+            <script data-isso="//isso.ston3o.me/" data-isso-lang="fr" src="//isso.ston3o.me/js/embed.min.js"></script>
+            <section id="isso-thread"></section>
 
             {{!--
             <section class="post-full-comments">

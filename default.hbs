@@ -13,6 +13,7 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -30,10 +31,10 @@
             <div class="site-footer-content inner">
                 <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
                 <nav class="site-footer-nav">
-                    <a href="{{@site.url}}">Latest Posts</a>
-                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                    <a href="https://mastodon.xyz/@ston3o" target="_blank">Suivez-moi sur Mastodon</a>
+                    <a href="https://framasoft.com/" target="_blank">Framasoft</a>
+                    <a href="https://www.laquadrature.net/fr/" target="_blank">La Quadrature du Net</a>
+                    <a href="https://www.fdn.fr/" target="_blank">FDN</a>
                 </nav>
             </div>
         </footer>
@@ -48,8 +49,8 @@
             {{#if @site.logo}}
                 <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
             {{/if}}
-            <h1 class="subscribe-overlay-title">Subscribe to {{@site.title}}</h1>
-            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+            <h1 class="subscribe-overlay-title">Restez inform&eacute;</h1>
+            <p class="subscribe-overlay-description">Abonnez-vous &agrave; la newsletter et recevez les derni&egrave;res activit&eacute;s de ston3o</p>
             {{subscribe_form placeholder="youremail@example.com"}}
         </div>
     </div>
@@ -74,6 +75,8 @@
         crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
 
     <script src="{{asset "built/infinitescroll.js"}}"></script>
 
