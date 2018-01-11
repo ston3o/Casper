@@ -3,3 +3,6 @@ run:
 
 enter:
 	@ docker exec -it ghost bash
+
+restart:
+	@ docker restart ghost
