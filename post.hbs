@@ -48,18 +48,15 @@ into the {body} of the default.hbs template --}}
             <section class="post-full-content">
                 <div class="post-content">
                     {{content}}
-                    <a href="https://ethibox.fr" target="_blank" style="box-shadow: none;">
-                        <img src="https://blog.ston3o.me/content/images/2018/09/banner.png" alt="banner" />
-                    </a>
                 </div>
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Restez inform&eacute;</h3>
-                <p>Abonnez-vous et recevez mes derni&egrave;res activit&eacute;s</p>
-                {{subscribe_form placeholder="email@exemple.com"}}
+                <h3 class="subscribe-form-title">Découvrez ma newsletter</h3>
+                <p>Abonnez-vous et recevez mes dernières activités</p>
+                <div class="newsletter-ston3o"></div>
             </section>
             {{/if}}
 
