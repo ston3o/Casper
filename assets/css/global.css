@@ -297,7 +297,7 @@ body {
 
 ::selection {
     text-shadow: none;
-    background: color(var(--blue) lightness(+30%));
+    background: #0d7377;
 }
 
 hr {
