@@ -26,3 +26,7 @@ dist/
 config.json
 changelog.md
 changelog.md.bk
+
+makefile
+content
+TODO.md
