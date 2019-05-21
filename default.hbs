@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
 <head>
-
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,20 +9,17 @@
     <title>{{meta_title}}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Access-Control-Allow-Origin" content="https://a.ethibox.fr">
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/prism.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/social.css"}}" />
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
-
 </head>
 <body class="{{body_class}}">
-
     <div class="site-wrapper">
-
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
 
@@ -32,13 +28,11 @@
             <div class="site-footer-content inner">
                 <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> <span class="copyleft">&copy;</span> 2017-{{date format="YYYY"}}</section>
                 <nav class="site-footer-nav">
-                    <a href="https://ston3o.me/" target="_blank">ston3o.me</a>
-                    <a href="https://ethibox.fr/" target="_blank">ethibox.fr</a>
-                    <a href="https://chatons.org/" target="_blank">chatons.org</a>
+                    <a href="mailto:contact@ston3o.me" target="_blank">Me contacter</a>
+                    {{!--  <a href="#">Laisser un avis</a>  --}}
                 </nav>
             </div>
         </footer>
-
     </div>
 
     {{!-- The big email subscribe modal content --}}
@@ -49,9 +43,10 @@
             {{#if @site.logo}}
                 <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
             {{/if}}
-            <h1 class="subscribe-overlay-title">Découvrez ma newsletter</h1>
-            <p class="subscribe-overlay-description">Abonnez-vous et recevez mes dernières activités</p>
-            <div class="newsletter-ston3o"></div>
+            <h1 class="subscribe-overlay-title">Envie d'en savoir plus ?</h1>
+            <p class="subscribe-overlay-description">Abonnes-toi et je t'enverrai de temps en temps, en exclusivité, des conseils, astuces, découvertes, outils et lectures...</p>
+            {{subscribe_form placeholder=(t "Enter your email") }}
+            <p style="margin-top: 10px;">🔒 Votre adresse email ne sera jamais cédée ni revendue. Vous pouvez vous désinscrire à tout moment.</p>
         </div>
     </div>
     {{/if}}
@@ -65,24 +60,20 @@
             var ratio = width / height;
             container.style.flex = ratio + ' 1 0%';
         })
+        document.onmouseout = (e) => {
+            if( e.clientY < 0 && !localStorage.getItem('exitintent')) {
+                window.location = (""+window.location).replace(/#[A-Za-z0-9_]*$/,'')+"#subscribe"
+                localStorage.setItem('exitintent', 'true');
+            }
+        };
     </script>
 
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-	<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-	<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-	<script src="https://unpkg.com/validator@10.9.0/validator.min.js"></script>
-	<script type="text/javascript">
-"use strict";var _createClass=function(){function a(b,c){for(var f,d=0;d<c.length;d++)f=c[d],f.enumerable=f.enumerable||!1,f.configurable=!0,"value"in f&&(f.writable=!0),Object.defineProperty(b,f.key,f)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _possibleConstructorReturn(a,b){if(!a)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return b&&("object"==typeof b||"function"==typeof b)?b:a}function _inherits(a,b){if("function"!=typeof b&&null!==b)throw new TypeError("Super expression must either be null or a function, not "+typeof b);a.prototype=Object.create(b&&b.prototype,{constructor:{value:a,enumerable:!1,writable:!0,configurable:!0}}),b&&(Object.setPrototypeOf?Object.setPrototypeOf(a,b):a.__proto__=b)}var Form=function(a){function b(){var n,h,j,k;_classCallCheck(this,b);for(var l=arguments.length,g=Array(l),m=0;m<l;m++)g[m]=arguments[m];return k=(h=(j=_possibleConstructorReturn(this,(n=b.__proto__||Object.getPrototypeOf(b)).call.apply(n,[this].concat(g))),j),j.state={email:"",error:"",successMessage:"",isValid:!1,textBtn:j.props.textBtn},j.handleChange=function(o){j.setState({email:o.target.value,error:"",successMessage:""})},j.handleSubmit=function(o){o.preventDefault();var p=j.state.email;j.setState({textBtn:"Loading..."}),validator.isEmail(p)?(fetch("https://a.ethibox.fr/form/submit",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:"mauticform[email]="+p+"&mauticform[formId]=4"}),setTimeout(function(){j.setState({isValid:!0,successMessage:"Vous avez souscrit avec succ\xE8s au Blog de ston3o avec l'adresse e-mail "+p+".",email:"",textBtn:j.props.textBtn})},1500)):j.setState({error:"Veuillez entrer un e-mail correct.",isValid:!1,textBtn:j.props.textBtn})},h),_possibleConstructorReturn(j,k)}return _inherits(b,a),_createClass(b,[{key:"render",value:function render(){var _state=this.state,g=_state.email,h=_state.isValid,j=_state.error,k=_state.successMessage,l=_state.textBtn;return React.createElement("div",null,React.createElement("form",null,React.createElement("div",{"class":"form-group"},React.createElement("input",{"class":"subscribe-email",type:"email",name:"email",value:g,onChange:this.handleChange,placeholder:"Entrer votre email"})),React.createElement("button",{onClick:this.handleSubmit},React.createElement("span",null,l))),j&&React.createElement("p",{style:{color:"red"}},j),h&&React.createElement("p",{style:{color:"green"}},k))}}]),b}(React.Component);Form.defaultProps={textBtn:"Je m'inscris"},Array.prototype.forEach.call(document.getElementsByClassName("newsletter-ston3o"),function(a){return ReactDOM.render(React.createElement(Form,null),a)});
-	</script>
+    <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "built/prism.js"}}"></script>
 
     <script src="{{asset "built/infinitescroll.js"}}"></script>
 
@@ -91,6 +82,5 @@
 
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
-
 </body>
 </html>

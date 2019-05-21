@@ -5,7 +5,7 @@
 {{!-- Everything inside the #author tags pulls data from the author --}}
 
 
-{{> header background=cover_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
+{{> header background=@site.cover_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
     <div class="inner">
         {{> "site-nav"}}
         <div class="site-header-content">
@@ -21,20 +21,13 @@
                     <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
                 {{/if}}
                 <div class="author-stats">
-                    {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <span class="bull">&bull;</span>
+                    {{plural ../pagination.total empty='Aucun article' singular='% article' plural='% articles'}} <span class="bull">&bull;</span>
                 </div>
-                {{#if website}}
-                    <a class="social-link social-link-wb" href="{{website}}" target="_blank" rel="noopener">{{> "icons/website"}}</a>
-                {{/if}}
-                {{#if twitter}}
-                    <a class="social-link social-link-tw" href="https://mastodon.xyz/@ston3o" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-                {{#if facebook}}
-                    <a class="social-link social-link-fb" href="{{facebook_url}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
+                <a class="social-link social-link-tw" href="https://mastodon.xyz/@ston3o" target="_blank" rel="noopener">{{> "icons/mastodon"}}</a>
+                <a class="social-link social-link-tw" href="https://twitter.com/ston3o" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                 <a class="social-link social-link-tw" href="https://instagram.ethibox.fr/ston3o" target="_blank" rel="noopener">{{> "icons/instagram"}}</a>
                 <a class="social-link social-link-gh" href="https://github.com/ston3o" target="_blank" rel="noopener">{{> "icons/github"}}</a>
-                <a class="social-link social-link-rss" href="https://blog.ston3o.me/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+                <a class="social-link social-link-rss" href="/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
             </div>
         </div>
     </div>

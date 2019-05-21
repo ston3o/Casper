@@ -7,83 +7,56 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
         {{> "site-nav"}}
     </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
 </header>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
+
+<div class="post-head" style="background-image:url({{feature_image}});">
+    <div class="container align-center">
+        <div style="position: relative;">
+            {{#if tags}}
+            <span class="category">{{tags separator=", "}}</span>
+            {{/if}}
+            <h1 class="title">{{title}}</h1>
+
+            <div class="post-meta">
+                {{#foreach authors}}
+                Par <a class="author" href="{{url}}" rel="author">
+                    <span class="name">{{name}}</span>
+                </a>
+                {{/foreach}}
+                <time class="time" datetime="{{date format="YYYY-MM-DD HH:MM:SS"}}" itemprop="datePublished">Le {{date format="DD MMMM YYYY"}}</time>
+            </div>
+        </div>
+    </div>
+</div>
 
 <main id="site-main" class="site-main outer">
     <div class="inner">
 
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-            <header class="post-full-header">
-                <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-                    {{#primary_tag}}
-                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
-                </section>
-                <h1 class="post-full-title">{{title}}</h1>
-            </header>
-
-            {{#if feature_image}}
-            <figure class="post-full-image">
-                {{!-- This is a responsive image, it loads different sizes depending on device
-                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-                <img
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                    sizes="(max-width: 800px) 400px,
-                            (max-width: 1170px) 700px,
-                            1400px"
-                    src="{{img_url feature_image size="xl"}}"
-                    alt="{{title}}"
-                />
-            </figure>
-            {{/if}}
-
             <section class="post-full-content">
                 <div class="post-content">
                     {{content}}
-                    <a href="https://ethibox.fr" target="_blank" style="box-shadow: none;">
-                        <img src="https://i.imgur.com/UsGeZR8.gif" alt="banner" />
-                    </a>
                 </div>
             </section>
 
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Découvrez ma newsletter</h3>
-                <p>Abonnez-vous et recevez mes dernières activités</p>
-                <div class="newsletter-ston3o"></div>
+            <section style="text-align: center; margin: 30px 0;">
+                {{> "share-links" fullurl=(url absolute="true") }}
             </section>
-            {{/if}}
-
-            <footer class="post-full-footer">
-
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
-                {{#has author="count:>1"}}
-                    {{> "byline-multiple"}}
-                {{else}}
-                    {{> "byline-single"}}
-                {{/has}}
-
-            </footer>
 
             <section class="post-full-comments">
                 <h3>{{> "icons/comments" }} Laisser un commentaire</h3>
                 <div id="commento"></div>
                 <script defer src="https://commento.ston3o.me/js/commento.js"></script>
             </section>
-
         </article>
 
     </div>
@@ -140,9 +113,6 @@ into the {body} of the default.hbs template --}}
     </div>
 </aside>
 
-{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{> floating-header}}
-
 {{/post}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
@@ -160,8 +130,6 @@ $(document).ready(function () {
     // End fitVids
 
     var progressBar = document.querySelector('#reading-progress');
-    var header = document.querySelector('.floating-header');
-    var title = document.querySelector('.post-full-title');
 
     var lastScrollY = window.scrollY;
     var lastWindowHeight = window.innerHeight;
@@ -187,16 +155,7 @@ $(document).ready(function () {
     }
 
     function update() {
-        var trigger = title.getBoundingClientRect().top + window.scrollY;
-        var triggerOffset = title.offsetHeight + 35;
         var progressMax = lastDocumentHeight - lastWindowHeight;
-
-        // show/hide floating header
-        if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
-        } else {
-            header.classList.remove('floating-active');
-        }
 
         progressBar.setAttribute('max', progressMax);
         progressBar.setAttribute('value', lastScrollY);

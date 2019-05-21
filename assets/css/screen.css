@@ -31,8 +31,14 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 @import "global.css";
 
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/nunito.woff2');
+}
+
 body {
     background: #f4f8fb;
+    font-family: 'Nunito';
 }
 
 .img {
@@ -126,7 +132,7 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
+    background: rgba(0,0,0,0.85);
 }
 
 .site-header:after {
@@ -451,10 +457,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     justify-content: space-between;
 }
 
-.post-card-excerpt {
-    font-family: Georgia, serif;
-}
-
 .post-card-meta {
     display: flex;
     justify-content: space-between;
@@ -667,6 +669,12 @@ make sure this only happens on large viewports / desktop-ish devices.
     background: #fff;
 }
 
+.post-template[class*="tag-"] .site-header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
 .post-full {
     position: relative;
     z-index: 50;
@@ -741,10 +749,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content {
     position: relative;
     margin: 0 auto;
-    padding: 70px 100px 0;
+    padding: 0px 100px 0;
     min-height: 230px;
-    font-family: Georgia, serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     line-height: 1.6em;
     background: #fff;
 }
@@ -760,41 +767,8 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 }
 
-.post-full-content:before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(-5deg);
-}
-
-.post-full-content:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    right: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(5deg);
-}
-
 .no-image .post-full-content {
     padding-top: 0;
-}
-
-.no-image .post-full-content:before,
-.no-image .post-full-content:after {
-    display: none;
 }
 
 .post-full-content h1,
@@ -900,7 +874,7 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: #3eb0ef 3px solid;
+    border-left: #00AAAA 3px solid;
 }
 
 .post-full-content blockquote p {
@@ -985,7 +959,6 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .post-full-content h1 {
@@ -1000,7 +973,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content h2 {
-    margin: 0.5em 0 0.2em 0;
+    margin: 0.5em 0 16px 0;
     font-size: 3.6rem;
     font-weight: 700;
 }
@@ -1038,7 +1011,6 @@ Usage (In Ghost editor):
     padding: 1em 0 1.5em;
     border: 0;
     color: var(--blue);
-    font-family: Georgia,serif;
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -1118,7 +1090,6 @@ Usage (In Ghost editor):
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
@@ -1760,10 +1731,10 @@ Usage (In Ghost editor):
 .progress {
     position: absolute;
     right: 0;
-    bottom: -1px;
+    bottom: -4px;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 5px;
     border: none;
     color: var(--blue);
     background: transparent;
@@ -1844,11 +1815,6 @@ Usage (In Ghost editor):
     flex-direction: column;
     align-items: center;
     max-width: 920px;
-}
-
-.post-template .post-content > p:first-child {
-    font-size: 1.25em;
-    line-height: 1.5em;
 }
 
 .post-full-content .kg-image {
@@ -2101,7 +2067,6 @@ Usage (In Ghost editor):
     justify-content: center;
     align-items: center;
     margin: 0 0 10px 0;
-    font-family: Georgia, serif;
     font-style: italic;
 }
 
@@ -2201,11 +2166,10 @@ Usage (In Ghost editor):
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0,25,40,0.97);
+    background: rgba(0,150,146,0.97);
     opacity: 0;
     transition: opacity 200ms ease-in;
     pointer-events: none;
-
     backdrop-filter: blur(3px);
 }
 
@@ -2240,7 +2204,6 @@ Usage (In Ghost editor):
 .subscribe-overlay-description {
     margin: 0 auto 50px;
     max-width: 650px;
-    font-family: Georgia, serif;
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 300;
@@ -2293,21 +2256,19 @@ Usage (In Ghost editor):
     font-weight: 400;
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
-    background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
-    );
+    background-color: #000;
     border-radius: 8px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
-
     -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.subscribe-overlay button:hover {
+    background-color: #2a2a2a;
 }
 
 .subscribe-overlay button:active,
 .subscribe-overlay button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background-color: teal;
 }
 
 .subscribe-overlay-close {
@@ -2410,5 +2371,187 @@ Usage (In Ghost editor):
     }
     .site-footer-nav a:first-child {
         margin-left: 0;
+    }
+}
+
+/* Custom */
+
+.align-center {
+    text-align: center;
+}
+
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6 {
+    margin-bottom: 20px !important;
+}
+
+.post-full-content ul,
+.post-full-content p,
+.post-full-content pre {
+    margin: 10px 0 !important;
+}
+
+.post-content > p:first-child {
+    padding: 20px 0px !important;
+    font-size: 22px;
+}
+
+.post-template .site-header {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/content/images/2017/11/cover-2.jpg) !important;;
+    background-size: cover!important;
+}
+
+@media only screen and (min-width: 700px) {
+    .post-template .site-header {
+        background-position-y: -100px!important;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .post-template .site-header {
+        background-position-y: -200px!important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .post-template .site-header {
+        background-position-y: -250px!important;
+    }
+}
+
+.post-card-meta {
+    margin-top: 20px;
+}
+
+.post-head {
+    padding: 160px 0px;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    position: relative;
+    margin-top: 64px;
+}
+
+.post-head {
+    padding: 160px 0px;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.post-head:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.post-head a {
+    color: #ffffff;
+}
+
+.post-head a:hover,
+.post-head a:focus {
+    color: #19ddc4;
+}
+
+.post-head .category {
+    position: relative;
+}
+
+.post-head .category:before,
+.post-head .category:after {
+    content: "";
+    height: 1px;
+    width: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+}
+
+.post-head .category:before {
+    left: -24px;
+}
+
+.post-head .category:after {
+    right: -24px;
+}
+
+.post-head .category a {
+    text-transform: uppercase;
+}
+
+.post-head .title {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin: 32px 0px;
+}
+
+.post-head .page-title {
+    margin: 0px;
+}
+
+.post-head .post-meta {
+    text-transform: uppercase;
+}
+
+.post-head .post-meta .author {
+    margin-right: 12px;
+}
+
+.post-head .post-meta .time {
+    margin-left: 12px;
+    position: relative;
+}
+
+.post-head .post-meta .time:before {
+    content: '';
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: -13px;
+    top: 50%;
+    margin-top: -6px;
+}
+
+.post-head.no-image {
+    padding: 80px 0px;
+}
+
+.post-head.no-image:before {
+    background: #19ddc4;
+}
+
+.post-head.no-image a {
+    color: #ffffff;
+}
+
+.post-head.no-image a:hover,
+.post-head.no-image a:focus {
+    color: #e6e6e6;
+}
+
+.post-head.no-image .title {
+    color: #ffffff;
+    text-shadow: none;
+}
+
+.post-head a:hover {
+    text-decoration: none;
+}
+
+@media (min-width: 1170px) {
+    .post-head .title {
+        padding: 0 250px;
     }
 }

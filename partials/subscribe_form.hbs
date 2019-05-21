@@ -1,0 +1,13 @@
+<form method="post" action="{{action}}" id="{{form_id}}" class="{{form_class}}">
+    {{! This is required for the form to work correctly }}
+    {{hidden}}
+
+    <div class="form-group{{#if error}} error{{/if}}">
+        <input class="gh-input subscribe-email" type="email" name="email" autofocus="autofocus" placeholder="Entrez votre email" required />
+    </div>
+    <button id="{{button_id}}" class="{{button_class}}" type="submit"><span>{{t "Subscribe"}}</span></button>
+    {{#if error}}<p class="main-error" style="color: red; margin: 0; weight: bold; text-align: center;">{{t error.message }}</p>{{/if}}
+    {{! This is used to get extra info about where this subscriber came from }}
+    {{script}}
+</form>
+

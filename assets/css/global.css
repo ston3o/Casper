@@ -331,14 +331,6 @@ textarea {
     resize: vertical;
 }
 
-p,
-ul,
-ol,
-dl,
-blockquote {
-    margin: 0 0 1.5em 0;
-}
-
 ol,
 ul {
     padding-left: 1.3em;

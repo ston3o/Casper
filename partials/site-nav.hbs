@@ -13,20 +13,12 @@
     </div>
     <div class="site-nav-right">
         <div class="social-links">
-            {{#if @site.facebook}}
-                <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-            {{/if}}
-            {{#if @site.twitter}}
-                <a class="social-link social-link-tw" href="https://mastodon.xyz/@ston3o" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-            {{/if}}
+            <a class="social-link social-link-tw" href="https://mastodon.xyz/@ston3o" target="_blank" rel="noopener">{{> "icons/mastodon"}}</a>
+            <a class="social-link social-link-tw" href="https://twitter.com/ston3o" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
             <a class="social-link social-link-tw" href="https://instagram.ethibox.fr/ston3o" target="_blank" rel="noopener">{{> "icons/instagram"}}</a>
             <a class="social-link social-link-gh" href="https://github.com/ston3o" target="_blank" rel="noopener">{{> "icons/github"}}</a>
             <a class="social-link rss-button" href="/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
         </div>
-        {{#if @labs.subscribers}}
-            <a class="subscribe-button" href="#subscribe">Me suivre</a>
-        {{else}}
-            <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-        {{/if}}
+        <a class="subscribe-button" href="#subscribe">Me suivre</a>
     </div>
 </nav>
