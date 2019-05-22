@@ -2395,8 +2395,10 @@ Usage (In Ghost editor):
     margin: 10px 0 !important;
 }
 
-.post-content > p:first-child {
-    padding: 20px 0px !important;
+.post-content > p:first-child,
+.post-content > blockquote:first-child {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
     font-size: 22px;
 }
 
