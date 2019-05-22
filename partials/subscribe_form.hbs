@@ -3,7 +3,7 @@
     {{hidden}}
 
     <div class="form-group{{#if error}} error{{/if}}">
-        <input class="gh-input subscribe-email" type="email" name="email" autofocus="autofocus" placeholder="Entrez votre email" required />
+        <input class="gh-input subscribe-email" type="email" name="email" placeholder="Entrez votre email" required />
     </div>
     <button id="{{button_id}}" class="{{button_class}}" type="submit"><span>{{t "Subscribe"}}</span></button>
     {{#if error}}<p class="main-error" style="color: red; margin: 0; weight: bold; text-align: center;">{{t error.message }}</p>{{/if}}
