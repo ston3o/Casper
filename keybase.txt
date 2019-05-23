@@ -1,0 +1,69 @@
+==================================================================
+https://keybase.io/ston3o
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ston3o.me
+  * I am ston3o (https://keybase.io/ston3o) on keybase.
+  * I have a public key with fingerprint E6E5 14AD F298 493D 3B54  8836 CF53 E458 B82F 3538
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101f94c4942f9e25ec36525f0f9e037cccc1bba93c6f903558ff29105e2adf2a9660a",
+      "fingerprint": "e6e514adf298493d3b548836cf53e458b82f3538",
+      "host": "keybase.io",
+      "key_id": "cf53e458b82f3538",
+      "kid": "0101f94c4942f9e25ec36525f0f9e037cccc1bba93c6f903558ff29105e2adf2a9660a",
+      "uid": "f81fde7acfa27a57ad85196588cb3f19",
+      "username": "ston3o"
+    },
+    "service": {
+      "hostname": "ston3o.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1507207577,
+  "expire_in": 157680000,
+  "prev": "ffc59aa1c68deebf8b25a08f5123cecd8a149fd4d172fe732daf2ed0869d09bc",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.74
+Comment: https://keybase.io/crypto
+
+yMIgAnicrVJbSBVRFL2WKQpqQQ+MMBrJHlx0XmfmnBtFEKQRRKXZy7qeOQ+d1Jnr
+vXO1FEmJ6qMsKnoZGEQPzSKoKCkysyStrCDrK4KIwpIKilRIrs1IfQR9tn/O2fus
+tfZeh/0gZaIvOS7YN380q6nxRNzje4ejvo2vFpysFQyb7hACtUIZGz9YOWURJ1hm
+UiEgiJIocaQSFakyR0wGjCgakAEX3UxUdOKGZBgYKUTjSFQAgJzLSBIBkzHlMkaa
+JmLBL3DTKmHhUNi0HFeWaQxIqgdAUEUKVQygQqhohAOFqQAaUOYKUKBLLLUjHsMd
+zsARlm3abs1NguPj/QP/n+eOjstxKHHKdEw4lnUMdEwhkJAGICSGwiXkASMsbOEK
+5qIjjm0ptlDnF9xalUmY962ej7/es927XwiFbccmdrlbLnWcUCTg0ZwdIQ9XzYzg
+b4WgYVrU/UKXUcXCEdO2hIDkIoljepISEHVZ1IGu+wW2PWSGWdD0EEDXoOiG14dV
+eUY4AQhjiWiQMmZwaMgAi5ADSVYIIxRiSUWcqlTSZc50RaaYy4yKUENURAYRPE+V
+li0E3E4OLvHcmCUWdqJhJtR1dRbF++KSfQmTJnir5UtOmvxn4Q6RxDG+/HbDwdXz
+5vYXXO/PLTlqFw7XLS/9/nZ0WntmY35xrPvSS1ReVJ+z53jxbLuj71zGYloxNWfZ
+6cCbD9VNnxZfOz6289tW3f+5J7XQnzaatQrV5OL2uD3TN318enbyWM9A0qzM5s7B
+Fe9SKrbdeNKY17ou9451dW/ZjLb9u88kXl6YldAaS1n0/EpTYVvewPda7Us046W8
+5NL7ocSGGDww84Ke8fFZw7kRUPnzfvePlWtzW4aKK2vmzhl8cX4pz09zLras7zd2
+ddFjRzan6q9711xrvllwNu/rTP7w0+aOxB+9p7YkTG17MYXXPxJH6tNvDYBZsQ13
+yZH04X0XY/HX26PAN/gLQ5xENg==
+=RSHi
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ston3o
+
+==================================================================
+
