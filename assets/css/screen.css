@@ -2271,6 +2271,18 @@ Usage (In Ghost editor):
     background-color: teal;
 }
 
+.subscribe-overlay-close:before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 100;
+}
+
 .subscribe-overlay-close {
     position: absolute;
     top: 0;
@@ -2280,7 +2292,7 @@ Usage (In Ghost editor):
     display: block;
 }
 
-.subscribe-overlay-close:before {
+.subscribe-overlay:before {
     content: "";
     position: absolute;
     top: 40px;
@@ -2293,7 +2305,7 @@ Usage (In Ghost editor):
     transform: rotate(45deg);
 }
 
-.subscribe-overlay-close:after {
+.subscribe-overlay:after {
     content: "";
     position: absolute;
     top: 40px;

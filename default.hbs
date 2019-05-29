@@ -63,7 +63,13 @@
         document.onmouseout = (e) => {
             if( e.clientY < 0 && !localStorage.getItem('exitintent')) {
                 window.location = (""+window.location).replace(/#[A-Za-z0-9_]*$/,'')+"#subscribe"
-                localStorage.setItem('exitintent', 'true');
+            }
+        };
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+                const exit = document.querySelector('.subscribe-overlay-close');
+                exit.click();
             }
         };
     </script>
