@@ -65,15 +65,6 @@
                             </header>
 
                             <p>{{t "You've successfully subscribed with the email address" }} <em>{{email}}</em>.</p>
-                            <script>
-                                fetch("https://a.ethibox.fr/form/submit", {
-                                    method: "POST",
-                                    headers: {
-                                        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-                                    },
-                                    body: `mauticform[email]={{email}}&mauticform[formId]=4`
-                                });
-                            </script>
                         {{/if}}
                     </section>
                 </div>
