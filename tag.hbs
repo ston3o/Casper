@@ -12,7 +12,7 @@
                     {{description}}
                 {{else}}
                     Une collection de {{plural ../pagination.total empty='articles' singular='% article' plural='% articles'}}
-                    <a class="social-link social-link-rss" style="z-index: 10; display: inline;" href="{{@blog.url}}{{url}}rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+                    <a class="social-link social-link-rss" style="z-index: 10; display: inline;" href="{{@site.url}}{{url}}rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
                 {{/if}}
             </h2>
         </div>
