@@ -669,7 +669,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     background: #fff;
 }
 
-.post-template[class*="tag-"] .site-header {
+.post-template .site-header {
     position: fixed;
     z-index: 1000;
     width: 100%;
@@ -2460,7 +2460,7 @@ Usage (In Ghost editor):
 
 .post-head:before {
     content: '';
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
     left: 0;
