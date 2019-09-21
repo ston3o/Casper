@@ -28,7 +28,7 @@
 
     <script>
         fetch("https://store.zapier.com/api/records?secret=GodoRihdRuwd1~")
-            .then(d => d.json().then(({subscribers}) => [... document.querySelectorAll('.subscribers')].map(span => span.innerHTML = subscribers)));
+            .then(d => d.json().then(({subscribers}) => [... document.querySelectorAll('.subscribers')].map(span => span.innerHTML = parseInt(subscribers))));
     </script>
 </head>
 <body>
