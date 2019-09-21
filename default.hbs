@@ -43,9 +43,9 @@
             {{#if @site.logo}}
                 <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
             {{/if}}
-            <h1 class="subscribe-overlay-title">Envie d'en savoir plus ?</h1>
-            <p class="subscribe-overlay-description">Abonnes-toi et je t'enverrai de temps en temps, en exclusivité, des conseils, astuces, découvertes, outils et lectures...</p>
-            {{subscribe_form placeholder=(t "Enter your email") }}
+            <h1 class="subscribe-overlay-title">Rejoignez les <span class="subscribers"></span> abonnés</h1>
+            <p class="subscribe-overlay-description">{{t "Subscribe description" }}</p>
+            {{subscribe_form button_class="subscribe-btn" placeholder=(t "Enter your email") }}
             <p style="margin-top: 10px;">🔒 Votre adresse email ne sera jamais cédée ni revendue. Vous pouvez vous désinscrire à tout moment.</p>
         </div>
     </div>
@@ -73,6 +73,9 @@
                 exit.click();
             }
         };
+
+        fetch("https://store.zapier.com/api/records?secret=GodoRihdRuwd1~")
+            .then(d => d.json().then(({subscribers}) => [... document.querySelectorAll('.subscribers')].map(span => span.innerHTML = subscribers)));
     </script>
 
 

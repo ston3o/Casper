@@ -478,10 +478,11 @@ h6 {
     font-weight: 500;
 }
 
-.subscribe-form button.black {
+.subscribe-btn, .subscribe-form button.subscribe-btn {
+    white-space: nowrap;
     background: black;
 }
 
-.subscribe-form button.black:hover {
+.subscribe-btn:hover, .subscribe-form button.subscribe-btn:hover {
     background: #2a2a2a;
 }

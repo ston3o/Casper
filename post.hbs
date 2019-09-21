@@ -61,9 +61,9 @@ into the {body} of the default.hbs template --}}
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form" style="margin-top: 50px; margin-bottom: 0px;">
-                <h3 class="subscribe-form-title">Envie d'en savoir plus ?</h3>
-                <p>Abonnes-toi et je t'enverrai de temps en temps, en exclusivité, des conseils, astuces, découvertes, outils et lectures.</p>
-                {{subscribe_form button_class="black" placeholder="youremail@example.com"}}
+                <h3 class="subscribe-form-title">Rejoignez les <span class="subscribers"></span> abonnés</h3>
+                <p>{{t "Subscribe description" }}</p>
+                {{subscribe_form button_class="subscribe-btn" placeholder=(t "Enter your email") }}
                 <p style="margin-top: 10px; font-size: 15px;">🔒 Votre adresse email ne sera jamais cédée ni revendue. Vous pouvez vous désinscrire à tout moment.</p>
             </section>
             {{/if}}

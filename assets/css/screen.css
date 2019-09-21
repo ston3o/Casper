@@ -1177,7 +1177,7 @@ Usage (In Ghost editor):
 .subscribe-email {
     display: block;
     padding: 10px;
-    width: 100%;
+    /* width: 100%; */
     border: color(var(--lightgrey) l(+7%)) 1px solid;
     color: var(--midgrey);
     font-size: 1.8rem;
@@ -2225,7 +2225,7 @@ Usage (In Ghost editor):
 .subscribe-overlay .subscribe-email {
     display: block;
     padding: 14px 20px;
-    width: 100%;
+    /* width: 100%; */
     border: none;
     color: var(--midgrey);
     font-size: 2rem;
