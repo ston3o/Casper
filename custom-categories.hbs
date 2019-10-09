@@ -17,7 +17,7 @@
 <main id="site-main" class="site-main outer">
     <div class="inner">
         <div class="post-feed">
-        {{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+        {{#get "tags" limit="all" include="count.posts" order="count.posts desc" filter="slug:-nofeed"}}
         {{#foreach tags}}
             <article class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#is "home"}}{{#has index="nth:6"}}post-card-large{{/has}}{{/is}}{{/unless}}">
 
