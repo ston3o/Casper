@@ -39,12 +39,14 @@
     <div class="inner">
 
         <div class="post-feed">
+            {{#get "posts" limit="all" filter="tag:-nofeed"}}
             {{#foreach posts}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
 
             {{/foreach}}
+            {{/get}}
         </div>
 
     </div>
