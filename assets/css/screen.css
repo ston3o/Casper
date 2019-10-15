@@ -1177,7 +1177,6 @@ Usage (In Ghost editor):
 .subscribe-email {
     display: block;
     padding: 10px;
-    /* width: 100%; */
     border: color(var(--lightgrey) l(+7%)) 1px solid;
     color: var(--midgrey);
     font-size: 1.8rem;
@@ -2185,6 +2184,14 @@ Usage (In Ghost editor):
     padding: 4vw;
     color: #fff;
     text-align: center;
+    max-width: 100%;
+}
+
+.subscribe-overlay-content p.description {
+    font-size: 2.5rem;
+    font-weight: 300;
+    opacity: 0.8;
+    text-align: left;
 }
 
 .subscribe-overlay-logo {
@@ -2202,7 +2209,7 @@ Usage (In Ghost editor):
 }
 
 .subscribe-overlay-description {
-    margin: 0 auto 50px;
+    margin: 0 auto 20px;
     max-width: 650px;
     font-size: 3rem;
     line-height: 1.3em;
@@ -2215,7 +2222,7 @@ Usage (In Ghost editor):
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .subscribe-overlay .form-group {
@@ -2225,7 +2232,8 @@ Usage (In Ghost editor):
 .subscribe-overlay .subscribe-email {
     display: block;
     padding: 14px 20px;
-    /* width: 100%; */
+    width: 100%;
+    margin: 10px 0px;
     border: none;
     color: var(--midgrey);
     font-size: 2rem;
@@ -2322,16 +2330,40 @@ Usage (In Ghost editor):
     cursor: default;
 }
 
+@media only screen and (max-width: 500px) {
+    .subscribe-overlay-title {
+        font-size: 4rem;
+    }
+
+    .subscribe-overlay-description {
+        font-size: 2rem;
+    }
+
+    .subscribe-overlay form {
+        flex-wrap: wrap;
+    }
+
+    .subscribe-overlay button {
+        margin: 10px 0px;
+        width: 100%;
+    }
+}
+
 
 /* 11. Site Footer
 /* ---------------------------------------------------------- */
 
 .site-footer {
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 60px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     color: #fff;
     background: color(var(--darkgrey) l(-15%));
+}
+
+.copyright {
+    font-weight: bold;
+    color: white;
 }
 
 .site-footer-content {
@@ -2571,7 +2603,7 @@ Usage (In Ghost editor):
 }
 
 .pagination {
-    padding: 40px;
+    padding: 40px 0px;
     margin-top: -20px;
 }
 
@@ -2592,3 +2624,15 @@ Usage (In Ghost editor):
     text-decoration: none;
 }
 
+@media (max-width: 500px) {
+    .pagination-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pagination-wrap > a {
+        width: 100%;
+        margin: 10px;
+    }
+}
