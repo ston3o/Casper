@@ -1,13 +1,12 @@
 {
     "name": "ston3o",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
-    "demo": "https://demo.ghost.io",
-    "version": "2.11.1",
+    "description": "My default theme.",
+    "demo": "https://ston3o.me",
+    "version": "0.1.0",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
     },
-    "license": "MIT",
     "screenshots": {
         "desktop": "assets/screenshot-desktop.jpg",
         "mobile": "assets/screenshot-mobile.jpg"
@@ -22,15 +21,14 @@
         "postship": "git fetch && gulp release"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "ston3o",
+        "email": "contact@ston3o.me",
+        "url": "https://ston3o.me"
     },
     "gpm": {
         "type": "theme",
         "categories": [
-            "Minimal",
-            "Magazine"
+            "Minimal"
         ]
     },
     "keywords": [
@@ -40,10 +38,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/ston3o/blog.ston3o.me"
     },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+    "bugs": "https://github.com/ston3o/blog.ston3o.me/issues",
+    "contributors": "https://github.com/ston3o/blog.ston3o.me/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.3.2",
         "autoprefixer": "9.6.1",
@@ -61,7 +59,7 @@
         "pump": "3.0.0"
     },
     "config": {
-        "posts_per_page": 25,
+        "posts_per_page": 6,
         "image_sizes": {
             "xxs": {
                 "width": 30

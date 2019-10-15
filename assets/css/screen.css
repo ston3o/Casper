@@ -1939,7 +1939,7 @@ Usage (In Ghost editor):
     flex-direction: column;
     flex-grow: 1;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 20px;
 }
 
@@ -2569,3 +2569,26 @@ Usage (In Ghost editor):
         padding: 0 250px;
     }
 }
+
+.pagination {
+    padding: 40px;
+    margin-top: -20px;
+}
+
+.pagination-button {
+    padding: 9px 16px;
+    border: color(var(--midgrey) l(+20%)) 1px solid;
+    color: var(--midgrey);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: all ease 0.2s;
+}
+
+.pagination-button:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    text-decoration: none;
+}
+

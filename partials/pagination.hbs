@@ -1,0 +1,24 @@
+<div class="post-feed">
+    {{#get "posts" limit=@config.posts_per_page page=page filter="tag:-nofeed" include="tags,authors"}}
+    {{#foreach posts limit=@config.posts_per_page }}
+
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{> "post-card"}}
+
+    {{/foreach}}
+    {{/get}}
+</div>
+
+<!-- start pagination -->
+<div class="pagination">
+    <div class="pagination-wrap align-center clearfix" role="navigation">
+        {{#if prev}}
+        <a class="pagination-button" href="{{page_url prev}}"> <i class="fa fa-long-arrow-left fa-fw"></i> <span>{{t "Page précédente"}}</span></a> - 
+        {{/if}}
+        <span class="page-number">{{t "Page {page} sur {pages}" page=page pages=pages}}</span>
+        {{#if next}}
+        - <a class="pagination-button" href="{{page_url next}}"><span>{{t "Page suivante"}}</span> <i class="fa fa-long-arrow-right fa-fw"></i></a>
+        {{/if}}
+    </div>
+</div>
+<!-- end pagination -->
