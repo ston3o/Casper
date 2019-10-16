@@ -1,26 +1,46 @@
-{{^is "tag"}}
-<div class="post-feed">
-    {{#get "posts" limit=@config.posts_per_page page=page filter="tag:-nofeed" include="tags,authors"}}
-    {{#foreach posts limit=@config.posts_per_page }}
+{{#is "tag"}}
 
-        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-        {{> "post-card"}}
-
-    {{/foreach}}
-    {{/get}}
-</div>
-{{/is}}
-
-<!-- start pagination -->
-<div class="pagination">
-    <div class="pagination-wrap align-center clearfix" role="navigation">
-        {{#if prev}}
-        <a class="pagination-button" href="{{page_url prev}}"> <i class="fa fa-long-arrow-left fa-fw"></i> <span>{{t "Page précédente"}}</span></a> -
-        {{/if}}
-        <span class="page-number">&nbsp;{{t "Page {page} sur {pages}" page=page pages=pages}}&nbsp;</span>
-        {{#if next}}
-        - <a class="pagination-button" href="{{page_url next}}"><span>{{t "Page suivante"}}</span> <i class="fa fa-long-arrow-right fa-fw"></i></a>
-        {{/if}}
+    <div class="post-feed">
+        {{#foreach posts}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+        {{/foreach}}
     </div>
-</div>
-<!-- end pagination -->
+    <div class="pagination">
+        <div class="pagination-wrap align-center clearfix" role="navigation">
+            {{#if prev}}
+            <a class="pagination-button" href="{{page_url prev}}"> <i class="fa fa-long-arrow-left fa-fw"></i> <span>{{t "Page précédente"}}</span></a> -
+            {{/if}}
+            <span class="page-number">&nbsp;{{t "Page {page} sur {pages}" page=page pages=pages}}&nbsp;</span>
+            {{#if next}}
+            - <a class="pagination-button" href="{{page_url next}}"><span>{{t "Page suivante"}}</span> <i class="fa fa-long-arrow-right fa-fw"></i></a>
+            {{/if}}
+        </div>
+    </div>
+
+{{else}}
+
+    {{#get "posts" limit=@config.posts_per_page page=page filter="tag:-nofeed" include="tags,authors" as |articles pages|}}
+    <div class="post-feed">
+        {{#foreach articles limit=@config.posts_per_page }}
+
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{> "post-card"}}
+
+        {{/foreach}}
+    </div>
+
+    <div class="pagination">
+        <div class="pagination-wrap align-center clearfix" role="navigation">
+            {{#if pages.prev}}
+            <a class="pagination-button" href="{{page_url pages.prev}}"> <i class="fa fa-long-arrow-left fa-fw"></i> <span>{{t "Page précédente"}}</span></a> -
+            {{/if}}
+            <span class="page-number">&nbsp;{{t "Page {page} sur {pages}" page=pages.page pages=pages.pages}}&nbsp;</span>
+            {{#if pages.next}}
+            - <a class="pagination-button" href="{{page_url pages.next}}"><span>{{t "Page suivante"}}</span> <i class="fa fa-long-arrow-right fa-fw"></i></a>
+            {{/if}}
+        </div>
+    </div>
+    {{/get}}
+
+{{/is}}
