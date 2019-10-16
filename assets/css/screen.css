@@ -867,9 +867,9 @@ Usage (In Ghost editor):
 
 
 /* Override third party iframe styles */
-.post-full-content iframe {
-    margin: 0 auto !important;
-}
+/* .post-full-content iframe { */
+    /* margin: 0 auto !important; */
+/* } */
 
 .post-full-content blockquote {
     margin: 0 0 1.5em;
@@ -2634,5 +2634,12 @@ Usage (In Ghost editor):
     .pagination-wrap > a {
         width: 100%;
         margin: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    iframe[src*="peertube"] {
+        width: 300px;
+        height: 200px;
     }
 }
