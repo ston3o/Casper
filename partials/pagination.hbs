@@ -1,3 +1,4 @@
+{{^is "tag"}}
 <div class="post-feed">
     {{#get "posts" limit=@config.posts_per_page page=page filter="tag:-nofeed" include="tags,authors"}}
     {{#foreach posts limit=@config.posts_per_page }}
@@ -8,6 +9,7 @@
     {{/foreach}}
     {{/get}}
 </div>
+{{/is}}
 
 <!-- start pagination -->
 <div class="pagination">
