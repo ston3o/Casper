@@ -11,7 +11,7 @@ RUN apk add --no-cache \
 
 ENV NODE_ENV production
 
-ENV GHOST_CLI_VERSION 1.11.0
+ENV GHOST_CLI_VERSION 1.13.1
 RUN set -eux; \
 	npm install -g "ghost-cli@$GHOST_CLI_VERSION"; \
 	npm cache clean --force
@@ -19,7 +19,7 @@ RUN set -eux; \
 ENV GHOST_INSTALL /var/lib/ghost
 ENV GHOST_CONTENT /var/lib/ghost/content
 
-ENV GHOST_VERSION 2.36.0
+ENV GHOST_VERSION 3.0.3
 
 RUN set -eux; \
 	mkdir -p "$GHOST_INSTALL"; \
@@ -65,6 +65,8 @@ WORKDIR $GHOST_INSTALL
 VOLUME $GHOST_CONTENT
 
 RUN sed -i -e "s/data.posts.reduce/data.posts.filter(d => !d.tags.map(t => t.name).includes('nofeed')).reduce/g" /var/lib/ghost/versions/$GHOST_VERSION/core/frontend/services/rss/generate-feed.js
+COPY emails /var/lib/ghost/versions/$GHOST_VERSION/core/server/services/members/emails/
+RUN sed -i -e "s/Confirm your subscription to/Confirmez votre abonnement -/g" /var/lib/ghost/versions/$GHOST_VERSION/core/server/services/members/api.js
 
 COPY docker-entrypoint.sh /usr/local/bin
 ENTRYPOINT ["docker-entrypoint.sh"]

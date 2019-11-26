@@ -27,6 +27,6 @@ config.json
 changelog.md
 changelog.md.bk
 
-makefile
-content
+content/
 TODO.md
+makefile

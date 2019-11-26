@@ -1,19 +1,58 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
 
-{{> header background=@site.cover_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
-    {{#post}}
-    <div class="inner">
-        {{> "site-nav"}}
-        <div class="site-header-content">
-            <h1 class="site-title">{{title}}</h1>
-            <h2 class="site-description">{{content}}</h2>
+{{#post}}
+<header class="site-header">
+    {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+        <div class="inner">
+            {{> "site-nav"}}
+            <div class="site-header-content">
+                <h1 class="site-title">{{title}}</h1>
+                <h2 class="site-description">{{custom_excerpt}}</h2>
+            </div>
         </div>
     </div>
-    {{/post}}
 </header>
+{{/post}}
 
-<!--start content area -->
+<style type="text/css">
+    .site-title,
+    .site-description {
+        text-align: center;
+    }
+
+    .post-feed {
+        background: none;
+    }
+
+    .site-nav-main {
+        z-index: 100;
+    }
+
+    .site-header {
+        z-index: 1000;
+    }
+
+    .site-header-background {
+        margin-top: 0;
+    }
+
+    .page-template .site-main {
+        margin-top: 0px;
+    }
+
+    .site-nav-main .site-nav {
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    }
+
+    .site-nav-main .fixed-nav-active {
+        opacity: 1;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.05s;
+    }
+</style>
+
 <main id="site-main" class="site-main outer">
     <div class="inner">
         <div class="post-feed">
@@ -61,4 +100,6 @@
         {{/get}}
         </div>
     </div>
-</div>
+</main>
+
+{{> site-header}}

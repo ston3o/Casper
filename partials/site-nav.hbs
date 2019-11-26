@@ -1,26 +1,34 @@
 <nav class="site-nav">
     <div class="site-nav-left">
-        {{^is "home"}}
-            {{#if @site.logo}}
-                <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
-            {{else}}
-                <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
-            {{/if}}
-        {{/is}}
-        {{#if @site.navigation}}
-            {{navigation}}
+        {{#if @site.logo}}
+            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+        {{else}}
+            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
         {{/if}}
+        <div class="site-nav-content">
+            {{#if @site.navigation}}
+                {{navigation}}
+            {{/if}}
+            {{#is "post"}}
+                <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
+            {{/is}}
+        </div>
     </div>
     <div class="site-nav-right">
         <div class="social-links">
-            <a class="social-link social-link-tw" href="https://mastodon.xyz/@ston3o" target="_blank" rel="noopener">{{> "icons/mastodon"}}</a>
-            <a class="social-link social-link-tw" href="https://twitter.com/ston3o" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-            {{!--  <a class="social-link social-link-tw" href="https://pixelfed.ethibox.fr/ston3o" target="_blank" rel="noopener">{{> "icons/pixelfed"}}</a>  --}}
-            {{!--  <a class="social-link social-link-tw" href="https://peertube.ethibox.fr/accounts/ston3o/videos" target="_blank" rel="noopener">{{> "icons/peertube"}}</a>  --}}
-            <a class="social-link social-link-tw" href="https://t.me/ston3o" target="_blank" rel="noopener">{{> "icons/telegram"}}</a>
-            <a class="social-link social-link-gh" href="https://github.com/ston3o" target="_blank" rel="noopener">{{> "icons/github"}}</a>
-            <a class="social-link rss-button" href="/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+            {{#if @site.facebook}}
+                <a class="social-link social-link-fb" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+            {{/if}}
+            {{#if @site.twitter}}
+                <a class="social-link social-link-tw" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+            {{/if}}
+            <a class="social-link" href="https://mastodon.xyz/@ston3o" target="_blank" rel="noopener">{{> "icons/mastodon"}}</a>
+            <a class="social-link" href="https://t.me/ston3o" target="_blank" rel="noopener">{{> "icons/telegram"}}</a>
+            <a class="social-link" href="https://github.com/ston3o" target="_blank" rel="noopener">{{> "icons/github"}}</a>
+            <a class="social-link rss-button" href="/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
         </div>
-        <a class="subscribe-button" href="#subscribe">S'abonner</a>
+        {{#if @labs.members}}
+            <a class="subscribe-button" href="#subscribe">{{ t "Subscribe" }}</a>
+        {{/if}}
     </div>
 </nav>

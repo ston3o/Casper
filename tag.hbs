@@ -2,17 +2,16 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{#tag}}
-{{> header background=feature_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
-    <div class="inner">
-        {{> "site-nav"}}
-        <div class="site-header-content">
+<header class="site-archive-header">
+    {{> site-header}}
+    {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+        <div class="inner site-header-content">
             <h1 class="site-title">{{name}}</h1>
             <h2 class="site-description">
                 {{#if description}}
-                    {{description}}
+                {{description}}
                 {{else}}
-                    Une collection de {{plural ../pagination.total empty='articles' singular='% article' plural='% articles'}}
-                    <a class="social-link social-link-rss" style="z-index: 10; display: inline;" href="{{@site.url}}{{url}}rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+                {{ t "A collection of" }} {{plural ../pagination.total empty=(t 'posts') singular=(t '% post') plural=(t '% posts')}}
                 {{/if}}
             </h2>
         </div>
@@ -22,7 +21,7 @@
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-    <div class="inner">
+    <div class="inner posts">
         {{pagination}}
     </div>
 </main>
