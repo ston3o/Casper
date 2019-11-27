@@ -25,6 +25,14 @@ body {
     color: white;
 }
 
+.post-full-content a:hover,
+.post-full-content a strong:hover {
+    color: teal;
+    text-decoration: none;
+    box-shadow: inset 0 -1px 0 teal;
+    transition: all .2s ease-in-out;
+}
+
 .align-center {
     text-align: center;
 }
