@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/prism.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/custom.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/social.css"}}" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -27,6 +29,54 @@
 
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
+
+        <div class="testimonials inner">
+            <h3>Ce que les lecteurs disent</h3>
+            <div class="slider">
+                <div class="post-card-content testimonial">
+                    <img src="https://i.imgur.com/aP7QmYC.jpg" />
+                    <h3>Carl Chenet</h3>
+                    <section class="post-card-excerpt">
+                        <q>“Article le plus consulté du Courrier du hacker de la semaine. Merci à lui, excellent article !”</q>
+                    </section>
+                </div>
+                <div class="post-card-content testimonial">
+                    <img src="https://i.imgur.com/v6phIoH.jpg" />
+                    <h3>Louis-Olivier Brassard</h3>
+                    <section class="post-card-excerpt">
+                        <q>“Un blogue de grande qualité, avec plein d'idées pour se faire une indépendance numérique.”</q>
+                    </section>
+                </div>
+                <div class="post-card-content testimonial">
+                    <img src="https://i.imgur.com/Z3F7dR2.jpg" />
+                    <h3>Tristan Cognard</h3>
+                    <section class="post-card-excerpt">
+                        <q>“Merci pour votre site que j'ai découvert aujourd'hui, il est excellent, c'est pour moi une mine d'or ! Il va m'apporter beaucoup de bonnes choses, je le sent.”</q>
+                    </section>
+                </div>
+                <div class="post-card-content testimonial">
+                    <img src="https://i.imgur.com/wqBfldj.jpg" />
+                    <h3>Hito</h3>
+                    <section class="post-card-excerpt">
+                        <q>“Il est vraiment cool ton blog, continue !”</q>
+                    </section>
+                </div>
+                <div class="post-card-content testimonial">
+                    <img src="https://i.imgur.com/QHpivHH.jpg" />
+                    <h3>Anonyme</h3>
+                    <section class="post-card-excerpt">
+                        <q>“Merci pour ce blog génial que je viens de découvrir, j'adore !.”</q>
+                    </section>
+                </div>
+                <div class="post-card-content testimonial">
+                    <img src="https://i.imgur.com/QHpivHH.jpg" />
+                    <h3>Anonyme</h3>
+                    <section class="post-card-excerpt">
+                        <q>“Ce blog est vraiment génial, merci infiniment.”</q>
+                    </section>
+                </div>
+            </div>
+        </div>
 
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
@@ -87,6 +137,7 @@
     {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
     <script src="{{asset "built/casper.js"}}"></script>
     <script type="text/javascript" src="{{asset "built/prism.js"}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
     {{!-- Scripts for Members subscription --}}
     <script>
