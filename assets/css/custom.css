@@ -33,6 +33,10 @@ body {
     transition: all .2s ease-in-out;
 }
 
+.post-full-content blockquote {
+    border-left: 3px solid teal;
+}
+
 .align-center {
     text-align: center;
 }
