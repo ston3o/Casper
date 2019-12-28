@@ -11,6 +11,10 @@ body {
     color: color(#738a94 l(-30%));
 }
 
+.site-home-header .site-description {
+    text-align: center;
+}
+
 .post-full-content h1,
 .post-full-content h2,
 .post-full-content h3,
