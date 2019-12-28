@@ -664,6 +664,14 @@ h2.post-card-title {
         margin-left: 0px;
         margin-top: 10px;
     }
+
+    .subscribe-overlay-title {
+        font-size: 4.2rem;
+    }
+
+    .subscribe-form p.subscribe-overlay-description {
+        font-size: 2.2rem;
+    }
 }
 
 /* Testimonials */
