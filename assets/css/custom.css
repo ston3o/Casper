@@ -700,3 +700,9 @@ h2.post-card-title {
 .testimonials .post-card-content .post-card-excerpt {
     max-width: 100%;
 }
+
+/* Commento */
+
+.commento-root .commento-submit-button {
+    background: #009696;
+}
