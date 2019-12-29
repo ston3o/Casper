@@ -706,3 +706,14 @@ h2.post-card-title {
 .commento-root .commento-submit-button {
     background: #00AAAA !important;
 }
+
+/* Socials buttons */
+
+.resp-sharing-button {
+    background-color: #0AA !important;
+}
+
+.resp-sharing-button__icon--solid {
+    height: 16px;
+    vertical-align: middle;
+}
