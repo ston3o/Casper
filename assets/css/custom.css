@@ -707,13 +707,25 @@ h2.post-card-title {
     background: #00AAAA !important;
 }
 
+.commento-root .commento-submit-button:hover {
+    background-color: #009696 !important;
+}
+
 /* Socials buttons */
 
 .resp-sharing-button {
     background-color: #0AA !important;
 }
 
+.resp-sharing-button:hover {
+    background-color: #009696 !important;
+}
+
 .resp-sharing-button__icon--solid {
     height: 16px;
     vertical-align: middle;
+}
+
+a.resp-sharing-button__link:hover {
+    text-decoration: none;
 }
