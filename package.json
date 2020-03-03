@@ -67,9 +67,6 @@
     ],
     "config": {
         "posts_per_page": 6,
-        "theme": {
-            "mastodon_url": "https://mastodon.xyz/@ston3o"
-        },
         "image_sizes": {
             "xxs": {
                 "width": 30
