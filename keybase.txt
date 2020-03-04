@@ -1,69 +1,56 @@
 ==================================================================
-https://keybase.io/ston3o
+https://keybase.io/johackim
 --------------------------------------------------------------------
 
 I hereby claim:
 
-  * I am an admin of https://ston3o.me
-  * I am ston3o (https://keybase.io/ston3o) on keybase.
-  * I have a public key with fingerprint E6E5 14AD F298 493D 3B54  8836 CF53 E458 B82F 3538
+  * I am an admin of https://johackim.com
+  * I am johackim (https://keybase.io/johackim) on keybase.
+  * I have a public key ASDSkU2rkJKtRtocyzKoW0IX7pL8R4cMG1znxim0Z7dWhQo
 
 To do so, I am signing this object:
 
 {
   "body": {
     "key": {
-      "eldest_kid": "0101f94c4942f9e25ec36525f0f9e037cccc1bba93c6f903558ff29105e2adf2a9660a",
-      "fingerprint": "e6e514adf298493d3b548836cf53e458b82f3538",
+      "eldest_kid": "0120d2914dab9092ad46da1ccb32a85b4217ee92fc47870c1b5ce7c629b467b756850a",
       "host": "keybase.io",
-      "key_id": "cf53e458b82f3538",
-      "kid": "0101f94c4942f9e25ec36525f0f9e037cccc1bba93c6f903558ff29105e2adf2a9660a",
-      "uid": "f81fde7acfa27a57ad85196588cb3f19",
-      "username": "ston3o"
+      "kid": "0120d2914dab9092ad46da1ccb32a85b4217ee92fc47870c1b5ce7c629b467b756850a",
+      "uid": "d2f71b19fe76c5f9ab70fca0c1b28319",
+      "username": "johackim"
+    },
+    "merkle_root": {
+      "ctime": 1583335734,
+      "hash": "f750fe49c80dfb07ba5185e9449267d882785e013df0ced201bf5aad31f5367dd9369976481afd0871140b9bc676bf695cca8531701acda5d9165cb7fe809a5f",
+      "hash_meta": "902b062f079ff1e3a9198665c937797eb79705f916c266680e1bebce724a394b",
+      "seqno": 14997268
     },
     "service": {
-      "hostname": "ston3o.me",
+      "entropy": "pNxLs8y3cJion8AU0F//ywdh",
+      "hostname": "johackim.com",
       "protocol": "https:"
     },
     "type": "web_service_binding",
-    "version": 1
+    "version": 2
   },
-  "ctime": 1507207577,
-  "expire_in": 157680000,
-  "prev": "ffc59aa1c68deebf8b25a08f5123cecd8a149fd4d172fe732daf2ed0869d09bc",
-  "seqno": 7,
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.1.1"
+  },
+  "ctime": 1583335703,
+  "expire_in": 504576000,
+  "prev": "e3e56ea6008f1e7024a36c8871dba68da782967f11e182563280b55af89e2f4f",
+  "seqno": 5,
   "tag": "signature"
 }
 
 which yields the signature:
 
------BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.0.74
-Comment: https://keybase.io/crypto
-
-yMIgAnicrVJbSBVRFL2WKQpqQQ+MMBrJHlx0XmfmnBtFEKQRRKXZy7qeOQ+d1Jnr
-vXO1FEmJ6qMsKnoZGEQPzSKoKCkysyStrCDrK4KIwpIKilRIrs1IfQR9tn/O2fus
-tfZeh/0gZaIvOS7YN380q6nxRNzje4ejvo2vFpysFQyb7hACtUIZGz9YOWURJ1hm
-UiEgiJIocaQSFakyR0wGjCgakAEX3UxUdOKGZBgYKUTjSFQAgJzLSBIBkzHlMkaa
-JmLBL3DTKmHhUNi0HFeWaQxIqgdAUEUKVQygQqhohAOFqQAaUOYKUKBLLLUjHsMd
-zsARlm3abs1NguPj/QP/n+eOjstxKHHKdEw4lnUMdEwhkJAGICSGwiXkASMsbOEK
-5qIjjm0ptlDnF9xalUmY962ej7/es927XwiFbccmdrlbLnWcUCTg0ZwdIQ9XzYzg
-b4WgYVrU/UKXUcXCEdO2hIDkIoljepISEHVZ1IGu+wW2PWSGWdD0EEDXoOiG14dV
-eUY4AQhjiWiQMmZwaMgAi5ADSVYIIxRiSUWcqlTSZc50RaaYy4yKUENURAYRPE+V
-li0E3E4OLvHcmCUWdqJhJtR1dRbF++KSfQmTJnir5UtOmvxn4Q6RxDG+/HbDwdXz
-5vYXXO/PLTlqFw7XLS/9/nZ0WntmY35xrPvSS1ReVJ+z53jxbLuj71zGYloxNWfZ
-6cCbD9VNnxZfOz6289tW3f+5J7XQnzaatQrV5OL2uD3TN318enbyWM9A0qzM5s7B
-Fe9SKrbdeNKY17ou9451dW/ZjLb9u88kXl6YldAaS1n0/EpTYVvewPda7Us046W8
-5NL7ocSGGDww84Ke8fFZw7kRUPnzfvePlWtzW4aKK2vmzhl8cX4pz09zLras7zd2
-ddFjRzan6q9711xrvllwNu/rTP7w0+aOxB+9p7YkTG17MYXXPxJH6tNvDYBZsQ13
-yZH04X0XY/HX26PAN/gLQ5xENg==
-=RSHi
------END PGP MESSAGE-----
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg0pFNq5CSrUbaHMsyqFtCF+6S/EeHDBtc58YptGe3VoUKp3BheWxvYWTESpcCBcQg4+VupgCPHnAko2yIcdumjaeCln8R4YJWMoC1WvieL0/EIB9hRzwcGEqkIlya/S40AS3StFig3QiWvK/na2z6X6SQAgHCo3NpZ8RA+KdilaxPI3cO9gdf56HDWC1SQO6D9pqVzEuyvUFV69PT8NColy0by/FLOMvkM5jRCGbDm7AzXuUlNAmRiFvVAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIH4BFUtV/uANXRi0bZxILtyoDH5K6m2YwhOVaTZEL/Aqo3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
 
-View my publicly-auditable identity here: https://keybase.io/ston3o
+View my publicly-auditable identity here: https://keybase.io/johackim
 
 ==================================================================
-
